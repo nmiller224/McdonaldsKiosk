@@ -1,11 +1,11 @@
 import tkinter as tk
 
-# Creates first window #
+# Creates first window
 window = tk.Tk()
 window.title("Restaurant Ordering")
 window.resizable(width=False, height=False)
 
-# quit application #
+# quit application
 def delete():
     window.destroy()
 
@@ -15,25 +15,25 @@ def create_window_meal():
     total_window = tk.Toplevel(window)
     global price
     price += 2
-    total_label = tk.Label(total_window, text=("Your total is :"))
+    total_label = tk.Label(total_window, text=("Your total is: $"))
     price_label = tk.Label(total_window, text=(float(price)))
     quit_button = tk.Button(total_window, command=delete, text="Quit")
 
     total_label.grid(row=0, column=0)
     price_label.grid(row=0, column=1)
-    quit_button.grid(row=1, column=0)
+    quit_button.grid(row=1, column=0, pady=10)
 
 # create the window that will display
 # the total if the customer does not want a meal
 def create_window_no_meal():
     total_window = tk.Toplevel(window)
-    total_label = tk.Label(total_window, text=("Your total is :"))
+    total_label = tk.Label(total_window, text=("Your total is: $"))
     price_label = tk.Label(total_window, text=(float(price)))
     quit_button = tk.Button(total_window, command=delete, text="Quit")
 
     total_label.grid(row=0, column=0)
     price_label.grid(row=0, column=1)
-    quit_button.grid(row=1, column=0)
+    quit_button.grid(row=1, column=0, pady=10)
 
 # asks customer if they want a big mac meal
 def ask_meal_bigmac():
@@ -49,11 +49,11 @@ def ask_meal_bigmac():
     back_button = tk.Button(meal_window, command=back, text="Back")
     quit_button = tk.Button(meal_window, command=delete, text="Quit")
 
-    meal_label.grid(row=0)
-    yes_button.grid(row=1)
-    no_button.grid(row=2)
-    back_button.grid(row=3)
-    quit_button.grid(row=4)
+    meal_label.grid(row=0, pady=5)
+    yes_button.grid(row=1, pady=5)
+    no_button.grid(row=2, pady=5)
+    back_button.grid(row=3, pady=5)
+    quit_button.grid(row=4, pady=5)
 
 # asks a customer if they want a 2 cheeseburger meal
 def ask_meal_twocheese():
@@ -69,11 +69,11 @@ def ask_meal_twocheese():
     back_button = tk.Button(meal_window, command=back, text="Back")
     quit_button = tk.Button(meal_window, command=delete, text="Quit")
 
-    meal_label.grid(row=0, column=0)
-    yes_button.grid(row=1, column=0)
-    no_button.grid(row=2, column=0)
-    back_button.grid(row=3)
-    quit_button.grid(row=4)
+    meal_label.grid(row=0, pady=5)
+    yes_button.grid(row=1, pady=5)
+    no_button.grid(row=2, pady=5)
+    back_button.grid(row=3, pady=5)
+    quit_button.grid(row=4, pady=5)
 
 # ask a customer if they want a quarter pounder meal
 def ask_meal_quarter():
@@ -89,11 +89,11 @@ def ask_meal_quarter():
     back_button = tk.Button(meal_window, command=back, text="Back")
     quit_button = tk.Button(meal_window, command=delete, text="Quit")
 
-    meal_label.grid(row=0, column=0)
-    yes_button.grid(row=1, column=0)
-    no_button.grid(row=2, column=0)
-    back_button.grid(row=3)
-    quit_button.grid(row=4)
+    meal_label.grid(row=0, pady=5)
+    yes_button.grid(row=1, pady=5)
+    no_button.grid(row=2, pady=5)
+    back_button.grid(row=3, pady=5)
+    quit_button.grid(row=4, pady=5)
 
 # asks a customer if they want a double quarter pounder meal
 def ask_meal_double():
@@ -109,11 +109,11 @@ def ask_meal_double():
     back_button = tk.Button(meal_window, command=back, text="Back")
     quit_button = tk.Button(meal_window, command=delete, text="Quit")
 
-    meal_label.grid(row=0, column=0)
-    yes_button.grid(row=1, column=0)
-    no_button.grid(row=2, column=0)
-    back_button.grid(row=3)
-    quit_button.grid(row=4)
+    meal_label.grid(row=0, pady=5)
+    yes_button.grid(row=1, pady=5)
+    no_button.grid(row=2, pady=5)
+    back_button.grid(row=3, pady=5)
+    quit_button.grid(row=4, pady=5)
 
 # label asking for the customer's order
 label = tk.Label(text="Welcome, what would you like to order?")
@@ -125,10 +125,10 @@ button_three = tk.Button(text="Quarter Pounder with Cheese", command=ask_meal_qu
 button_four = tk.Button(text="Double Quarter Pounder with Cheese", command=ask_meal_double)
 button_stop = tk.Button(text="Quit", command=delete)
 
-label.grid(row=0)
-button.grid(row=1)
-button_two.grid(row=2)
-button_three.grid(row=3)
-button_four.grid(row=4)
-button_stop.grid(row=5)
+label.grid(row=0, pady=5)
+button.grid(row=1, pady=5)
+button_two.grid(row=2, pady=5)
+button_three.grid(row=3, pady=5)
+button_four.grid(row=4, pady=5)
+button_stop.grid(row=5, pady=5)
 window.mainloop()
